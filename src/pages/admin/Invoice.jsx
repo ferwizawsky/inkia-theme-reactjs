@@ -114,7 +114,7 @@ function Invoice() {
                   </FunctionButton>
                 </Link>
                 <Link to={`${path}/edit/${index}`}>
-                  <FunctionButton className="bg-amber-400/20 hover:bg-amber-400/50 text-amber-500">
+                  <FunctionButton>
                     <FilePenLine className="w-4 h-4" />
                   </FunctionButton>
                 </Link>
