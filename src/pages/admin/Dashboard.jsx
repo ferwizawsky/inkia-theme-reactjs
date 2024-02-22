@@ -3,6 +3,17 @@ import Cardia from "@/components/inkia/card/Cardia";
 import CardIcon from "@/components/inkia/card/CardIcon";
 import CardSide from "@/components/inkia/card/CardSide";
 import { Cloud, Users, Settings, FileText, Gamepad2 } from "lucide-react";
+import React from "react";
+import {
+  objectDataline,
+  objectDataArea,
+  objectDataRadian,
+  objectDataDonut,
+} from "@/lib/data/dashboard";
+
+const BarChart = React.lazy(() => import("@/components/dashboard/BarChart"));
+const LineChart = React.lazy(() => import("@/components/dashboard/LineChart"));
+const AreaChart = React.lazy(() => import("@/components/dashboard/AreaChart"));
 
 function Dashboard() {
   return (
@@ -50,6 +61,11 @@ function Dashboard() {
               <div slot="title">Total Document</div>
               <div slot="value">2.490</div>
             </Cardia>
+          </div>
+          <div className="grid lg:grid-cols-4 gap-4">
+            <LineChart data={objectDataline} className="lg:col-span-2" />
+            <BarChart className="lg:col-span-2" />
+            <AreaChart data={objectDataArea} className="lg:col-span-4" />
           </div>
         </div>
 
